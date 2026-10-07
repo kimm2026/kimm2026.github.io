@@ -1,0 +1,314 @@
+:root {
+  --paper: #f6f1e7;
+  --paper-deep: #efe6d6;
+  --ink: #2a3a34;
+  --ink-soft: #4d5e56;
+  --sage: #4f7d68;
+  --sage-deep: #3d6453;
+  --sky: #d7ebe8;
+  --peach: #f3d3b8;
+  --white: #fffcf7;
+  --shadow: 0 12px 32px rgba(42, 58, 52, 0.08);
+  --radius: 18px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, var(--sky) 0, transparent 42%),
+    radial-gradient(circle at top right, var(--peach) 0, transparent 36%),
+    var(--paper);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--sage-deep);
+}
+
+img {
+  max-width: 100%;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--white);
+  padding: 0.6rem 1rem;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 20;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 252, 247, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(79, 125, 104, 0.15);
+}
+
+.header-inner {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 0.85rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand strong {
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+}
+
+.brand span {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.nav-list a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  background: var(--sky);
+  outline: none;
+}
+
+.nav-list a[aria-current="page"] {
+  background: var(--sage);
+  color: var(--white);
+}
+
+main {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.4rem 0 3.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.6rem 1.7rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  color: var(--sage-deep);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.lead {
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.2rem;
+}
+
+.meta {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.meta dt {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.meta dd {
+  margin: 0.15rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.quote-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--sage) 0%, var(--sage-deep) 100%);
+  color: var(--white);
+}
+
+.quote-card p {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  font-weight: 700;
+}
+
+.quote-card small {
+  margin-top: 0.8rem;
+  opacity: 0.9;
+}
+
+.section-title {
+  margin: 2.2rem 0 1rem;
+  font-size: 1.35rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.tile h2,
+.tile h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+.tile p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.bilingual {
+  display: grid;
+  gap: 1rem;
+}
+
+.big-phrase {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  margin: 0.2rem 0 0.6rem;
+  color: var(--sage-deep);
+}
+
+.contact-box a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+.quote-heading {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+}
+
+.quote-of-day blockquote {
+  margin: 0 0 1.2rem;
+  padding: 0;
+  border: 0;
+}
+
+.quote-of-day blockquote p {
+  margin: 0;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.quote-of-day blockquote footer {
+  margin-top: 0.7rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.quote-of-day button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  background: var(--sage);
+  color: var(--white);
+  font: inherit;
+  font-weight: 700;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+}
+
+.quote-of-day button:hover,
+.quote-of-day button:focus-visible {
+  background: var(--sage-deep);
+  outline: none;
+}
+
+.page-footer {
+  border-top: 1px solid rgba(79, 125, 104, 0.18);
+  padding: 1.3rem 0 2rem;
+  color: var(--ink-soft);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    width: 100%;
+  }
+
+  .nav-list a {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
